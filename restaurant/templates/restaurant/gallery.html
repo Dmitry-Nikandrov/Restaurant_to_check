@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+{% extends 'restaurant/base.html'  %}
+{% load static %}
+{% block content %}
+<!-- Specials Section -->
+<section id="specials" class="specials section" style="min-height: 100vh; padding: 20px 0; margin-top: 120px;">
+
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+        <h2>Иллюстрации</h2>
+    </div><!-- End Section Title -->
+    <!--Блюда-->
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row">
+            <h3>Блюда</h3>
+            <hr>
+            <div class="col-lg-3">
+                <ul class="nav nav-tabs flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link active show" data-bs-toggle="tab" href="#specials-tab-1">Хит этой недели</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" href="#specials-tab-2">Новинки</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-9 mt-4 mt-lg-0">
+                <div class="tab-content">
+                    <div class="tab-pane active show" id="specials-tab-1">
+                        <div class="row">
+                            <div class="col-lg-8 details order-2 order-lg-1">
+                                <h3>Борщ украинский с пампушками и чесноком</h3>
+                                <p class="fst-italic">Борщ - это традиционное украинское первое блюдо. Борщ - это суп со свёклой на мясном бульоне. Русский борщ подаётся со ржаным хлебом, а украинский борщ подаётся с чесночными пампушками.</p>
+                            </div>
+                            <div class="col-lg-4 text-center order-1 order-lg-2">
+                                <img src="{% static 'img/gallery/food1.jpg' %}" alt="" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="specials-tab-2">
+                        <div class="row">
+                            <div class="col-lg-8 details order-2 order-lg-1">
+                                <h3>Тыквенный суп-пюре</h3>
+                                <p class="fst-italic">Суп тыквенный нежный и красивый, в нем много полезного каротина. Поэтому когда наступает осень, мы покупаем тыкву, ищем рецепт тыквенного супа и создаем себе оранжевое настроение.</p>
+                            </div>
+                            <div class="col-lg-4 text-center order-1 order-lg-2">
+                                <img src="{% static 'img/gallery/food2.jpg' %}" alt="" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="specials-tab-3">
+                        <div class="row">
+                            <div class="col-lg-8 details order-2 order-lg-1">
+                                <h3>Impedit facilis occaecati odio neque aperiam sit</h3>
+                                <p class="fst-italic">Eos voluptatibus quo. Odio similique illum id quidem non enim
+                                    fuga. Qui natus non sunt dicta dolor et. In asperiores velit quaerat perferendis
+                                    aut</p>
+                                <p>Iure officiis odit rerum. Harum sequi eum illum corrupti culpa veritatis quisquam.
+                                    Neque necessitatibus illo rerum eum ut. Commodi ipsam minima molestiae sed
+                                    laboriosam a iste odio. Earum odit nesciunt fugiat sit ullam. Soluta et harum
+                                    voluptatem optio quae</p>
+                            </div>
+                            <div class="col-lg-4 text-center order-1 order-lg-2">
+                                <img src="{% static 'img/gallery/food3.jpg' %}" alt="" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="specials-tab-4">
+                        <div class="row">
+                            <div class="col-lg-8 details order-2 order-lg-1">
+                                <h3>Fuga dolores inventore laboriosam ut est accusamus laboriosam dolore</h3>
+                                <p class="fst-italic">Totam aperiam accusamus. Repellat consequuntur iure voluptas iure
+                                    porro quis delectus</p>
+                                <p>Eaque consequuntur consequuntur libero expedita in voluptas. Nostrum ipsam
+                                    necessitatibus aliquam fugiat debitis quis velit. Eum ex maxime error in consequatur
+                                    corporis atque. Eligendi asperiores sed qui veritatis aperiam quia a laborum
+                                    inventore</p>
+                            </div>
+                            <div class="col-lg-4 text-center order-1 order-lg-2">
+                                <img src="{% static 'img/gallery/food4.jpg' %}" alt="" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="specials-tab-5">
+                        <div class="row">
+                            <div class="col-lg-8 details order-2 order-lg-1">
+                                <h3>Est eveniet ipsam sindera pad rone matrelat sando reda</h3>
+                                <p class="fst-italic">Omnis blanditiis saepe eos autem qui sunt debitis porro quia.</p>
+                                <p>Exercitationem nostrum omnis. Ut reiciendis repudiandae minus. Omnis recusandae ut
+                                    non quam ut quod eius qui. Ipsum quia odit vero atque qui quibusdam amet. Occaecati
+                                    sed est sint aut vitae molestiae voluptate vel</p>
+                            </div>
+                            <div class="col-lg-4 text-center order-1 order-lg-2">
+                                <img src="{% static 'img/gallery/food5.jpg' %}" alt="" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!--Повара-->
+    <div class="container mt-5" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row">
+            <h3>Наши продавы</h3>
+            <hr>
+            <div class="col-lg-3">
+                <ul class="nav nav-tabs flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link active show" data-bs-toggle="tab" href="#specials-tab-1-1">Оксана Иванова</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" href="#specials-tab-2-1">Валентина Грибова</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" href="#specials-tab-4-1">Сестры Бельские</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" href="#specials-tab-5-1">Павел Караманов</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-9 mt-4 mt-lg-0">
+                <div class="tab-content">
+                    <div class="tab-pane active show" id="specials-tab-1-1">
+                        <div class="row">
+                            <div class="col-lg-8 details order-2 order-lg-1">
+                                <h3>Продавец-официант бара</h3>
+                                <p class="fst-italic">Оксана работает в рюмочной много леи и является экспертом своего дела. Чуткое внимание к посетителям делает общение  ней особенно приятным</p>
+                            </div>
+                            <div class="col-lg-4 text-center order-1 order-lg-2">
+                                <img src="{% static 'img/man1.png' %}" alt="" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="specials-tab-2-1">
+                        <div class="row">
+                            <div class="col-lg-8 details order-2 order-lg-1">
+                                <h3>Et Помощник продавца-официанта бара</h3>
+                                <p class="fst-italic">Валентина работает у нас недавно, но быстро влилась в ритм работы нашего коллектива и успешно справляется со всей работой, помогая нашим продавцам</p>
+
+                            </div>
+                            <div class="col-lg-4 text-center order-1 order-lg-2">
+                                <img src="{% static 'img/woman1.jpeg' %}" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="specials-tab-3-1">
+                        <div class="row">
+                            <div class="col-lg-8 details order-2 order-lg-1">
+                                <h3>Повары по приготовлению блюд</h3>
+                                <p class="fst-italic">Сестры Бельские обеспечивают нашу рюмочную вкусной едой на любой вкус от простейших закусок до сложных первый и вторых блюд</p>
+
+                            </div>
+                            <div class="col-lg-4 text-center order-1 order-lg-2">
+                                <img src="{% static 'img/man2.jpeg' %}" alt="" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="specials-tab-4-1">
+                        <div class="row">
+                            <div class="col-lg-8 details order-2 order-lg-1">
+                                <h3> Повары по приготовлению основных блюд и закусок</h3>
+                                <p class="fst-italic">Сестры Бельские обеспечивают нашу рюмочную всем набором блюд: от простых закусок до сложных первых и вторых блюд.</p>
+                            </div>
+                            <div class="col-lg-4 text-center order-1 order-lg-2">
+                                <img src="{% static 'img/man4.jpeg' %}" alt="" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="specials-tab-5-1">
+                        <div class="row">
+                            <div class="col-lg-8 details order-2 order-lg-1">
+                                <h3>Эксперт по спиртным напиткам</h3>
+                                <p class="fst-italic">Павел является работником, ответственным за ассортимент, качество и доступность всех спиртных напитков в нашем баре.</p>
+                            </div>
+                            <div class="col-lg-4 text-center order-1 order-lg-2">
+                                <img src="{% static 'img/man3.jpeg' %}" alt="" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!--Ресторан-->
+    <div class="container mt-4" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row">
+            <h3>Ресторан</h3>
+            <hr>
+            <div class="col-lg-3">
+                <ul class="nav nav-tabs flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link active show" data-bs-toggle="tab" href="#specials-tab-1-1-2">Исторические заметки</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" href="#specials-tab-2-1-2">Наше помещение</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-9 mt-4 mt-lg-0">
+                <div class="tab-content">
+                    <div class="tab-pane active show" id="specials-tab-1-1-2">
+                        <div class="row">
+                            <div class="col-lg-8 details order-2 order-lg-1">
+                                <h3>История нашей рюмочной</h3>
+                                <p class="fst-italic">Официально рюмочная под названием «Второе дыхание» открылась, по воспоминаниям постоянных посетителей, в 1996–1997 годах. Однако среди москвичей бытует мнение, что она ведет свою историю чуть ли не с 70-х годов. Дело в том, что тогда в районе «Новокузнецкой» было множество питейных заведений, выполненных в схожем стиле. И «Второе дыхание» на протяжении своей жизни не меняло стилистику «а-ля советская пивная».</p>
+                            </div>
+                            <div class="col-lg-4 text-center order-1 order-lg-2">
+                                <img src="{% static 'img/gallery/room1.jpg' %}" alt="" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="specials-tab-2-1-2">
+                        <div class="row">
+                            <div class="col-lg-8 details order-2 order-lg-1">
+                                <h3>Описание помещения рюмочной</h3>
+                                <p class="fst-italic">Помещение рюмочной составляет 40 кв. м и организовано и является прямоугольным. В помещении расположены 10 столиков, каждый из которых отличается выполнен в индивидуальном стиле.</p>
+                            </div>
+                            <div class="col-lg-4 text-center order-1 order-lg-2">
+                                <img src="{% static 'img/gallery/room2.jpg' %}" alt="" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="specials-tab-3-1-2">
+                        <div class="row">
+                            <div class="col-lg-8 details order-2 order-lg-1">
+                                <h3>Impedit facilis occaecati odio neque aperiam sit</h3>
+                                <p class="fst-italic">Eos voluptatibus quo. Odio similique illum id quidem non enim
+                                    fuga. Qui natus non sunt dicta dolor et. In asperiores velit quaerat perferendis
+                                    aut</p>
+                                <p>Iure officiis odit rerum. Harum sequi eum illum corrupti culpa veritatis quisquam.
+                                    Neque necessitatibus illo rerum eum ut. Commodi ipsam minima molestiae sed
+                                    laboriosam a iste odio. Earum odit nesciunt fugiat sit ullam. Soluta et harum
+                                    voluptatem optio quae</p>
+                            </div>
+                            <div class="col-lg-4 text-center order-1 order-lg-2">
+                                <img src="{% static 'img/gallery/room3.jpg' %}" alt="" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="specials-tab-4-1-2">
+                        <div class="row">
+                            <div class="col-lg-8 details order-2 order-lg-1">
+                                <h3>Fuga dolores inventore laboriosam ut est accusamus laboriosam dolore</h3>
+                                <p class="fst-italic">Totam aperiam accusamus. Repellat consequuntur iure voluptas iure
+                                    porro quis delectus</p>
+                                <p>Eaque consequuntur consequuntur libero expedita in voluptas. Nostrum ipsam
+                                    necessitatibus aliquam fugiat debitis quis velit. Eum ex maxime error in consequatur
+                                    corporis atque. Eligendi asperiores sed qui veritatis aperiam quia a laborum
+                                    inventore</p>
+                            </div>
+                            <div class="col-lg-4 text-center order-1 order-lg-2">
+                                <img src="{% static 'img/gallery/room4.jpg' %}" alt="" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="specials-tab-5-1-2">
+                        <div class="row">
+                            <div class="col-lg-8 details order-2 order-lg-1">
+                                <h3>Est eveniet ipsam sindera pad rone matrelat sando reda</h3>
+                                <p class="fst-italic">Omnis blanditiis saepe eos autem qui sunt debitis porro quia.</p>
+                                <p>Exercitationem nostrum omnis. Ut reiciendis repudiandae minus. Omnis recusandae ut
+                                    non quam ut quod eius qui. Ipsum quia odit vero atque qui quibusdam amet. Occaecati
+                                    sed est sint aut vitae molestiae voluptate vel</p>
+                            </div>
+                            <div class="col-lg-4 text-center order-1 order-lg-2">
+                                <img src="{% static 'img/gallery/room5.jpg' %}" alt="" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</section><!-- /Specials Section -->
+
+
+{% endblock %}

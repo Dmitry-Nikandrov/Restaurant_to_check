@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+{% extends 'restaurant/base.html'  %}
+{% load static %}
+{% block content %}
+ <!-- Menu Section -->
+<section id="menu" class="menu section" style="min-height: 100vh; padding: 20px 0; margin-top: 120px;">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Меню</h2>
+        <p>Меню курорт - рюмочной</p>
+      </div><!-- End Section Title -->
+
+      <div class="container isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+
+        <div class="row" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-12 d-flex justify-content-center">
+            <ul class="menu-filters isotope-filters">
+              <li data-filter="*" class="filter-active">Все блюда</li>
+              <li data-filter=".filter-starters">Закуски</li>
+              <li data-filter=".filter-salads">Салаты</li>
+              <li data-filter=".filter-specialty">Фирменные блюда</li>
+            </ul>
+          </div>
+        </div><!-- Menu Filters -->
+
+        <div class="row isotope-container" data-aos="fade-up" data-aos-delay="200">
+          <!-- Menu Item -->
+          <div class="col-lg-6 menu-item isotope-item filter-starters">
+            <img src="{% static 'img/menu/lobster-bisque.jpg' %}" class="menu-img" alt="">
+            <div class="menu-content">
+              <a href="#">Комплексный завтрак "доброе утро"</a><span>384 руб.</span>
+            </div>
+            <div class="menu-ingredients">
+              Гренки, чесночный соус, шпажки с баклажанами, бутерброд с луком и сльдью, половина бургера, 50 гр. водки
+            </div>
+          </div><!-- Menu Item -->
+
+          <div class="col-lg-6 menu-item isotope-item filter-specialty" style="color:green">
+            <img src="{% static 'img/menu/bread-barrel.jpeg' %}" class="menu-img" alt="">
+            <div class="menu-content">
+              <a href="#">Оптимальный перекус на двоих</a><span>480 руб.</span>
+            </div>
+            <div class="menu-ingredients">
+              Бутерброды с сельдью, бутерброды с колбасой, бутурброды с сыром, 2 рюмки водки, 2 стакана сока
+            </div>
+          </div><!-- Menu Item -->
+
+          <div class="col-lg-6 menu-item isotope-item filter-starters">
+            <img src="{% static 'img/menu/cake.jpg' %}" class="menu-img" alt="">
+            <div class="menu-content">
+              <a href="#">Крабовый пирог</a><span>280 руб.</span>
+            </div>
+            <div class="menu-ingredients">
+              Пирог из лаваша с крабовыми палочками, майонезом и пряностями
+            </div>
+          </div><!-- Menu Item -->
+
+          <div class="col-lg-6 menu-item isotope-item filter-salads">
+            <img src="{% static 'img/menu/caesar.jpg' %}" class="menu-img" alt="">
+            <div class="menu-content">
+              <a href="#">Салат цезарь</a><span>520 руб.</span>
+            </div>
+            <div class="menu-ingredients">
+             Салат айсберг, филе курицы, помидоры черри, майонез, сыр "Пашехонский", пшеничные гренки
+            </div>
+          </div><!-- Menu Item -->
+
+          <div class="col-lg-6 menu-item isotope-item filter-specialty">
+            <img src="{% static 'img/menu/tuscan-grilled.jpg' %}" class="menu-img" alt="">
+            <div class="menu-content">
+              <a href="#">Первое знакомство</a><span>320 руб.</span>
+            </div>
+            <div class="menu-ingredients">
+              Стопка и стакан хреновухи, нарезка сала, нарезка колбасы, маринованные овощи
+            </div>
+          </div><!-- Menu Item -->
+
+          <div class="col-lg-6 menu-item isotope-item filter-starters">
+            <img src="{% static 'img/menu/mozzarella.jpeg' %}" class="menu-img" alt="">
+            <div class="menu-content">
+              <a href="#">Между делом</a><span>250 руб.</span>
+            </div>
+            <div class="menu-ingredients">
+              2 рюмки водки, 2 бутерброда с майонезом и яйцом
+            </div>
+          </div><!-- Menu Item -->
+
+          <div class="col-lg-6 menu-item isotope-item filter-salads">
+            <img src="{% static 'img/menu/greek-salad.jpg' %}" class="menu-img" alt="">
+            <div class="menu-content">
+              <a href="#">Легкий перекус</a><span>380 руб.</span>
+            </div>
+            <div class="menu-ingredients">
+              Кружка пиво "Жигули", шпроты, нарезка: яйцо вареное, огцрец соленый, укроп
+            </div>
+          </div><!-- Menu Item -->
+
+          <div class="col-lg-6 menu-item isotope-item filter-salads">
+            <img src="{% static 'img/menu/spinach-salad.jpeg' %}" class="menu-img" alt="">
+            <div class="menu-content">
+              <a href="#">Элитный гость</a><span>1 450 руб.</span>
+            </div>
+            <div class="menu-ingredients">
+              Бутерброд с красной икрой, бутерброд с черной икрой, картофель жареный в ломтиках, селедка в кусочках с луком, настойка на облепихе, настойка на клюкве, настойка на вишне
+            </div>
+          </div><!-- Menu Item -->
+
+          <div class="col-lg-6 menu-item isotope-item filter-specialty">
+            <img src="{% static 'img/menu/lobster-roll.jpg' %}" class="menu-img" alt="">
+            <div class="menu-content">
+              <a href="#">Сибирский ужин</a><span>1 280 руб.</span>
+            </div>
+            <div class="menu-ingredients">
+              Бутылка водки, шашлык свиной, капуста маринованная, грузди маринованные, соленые огурцы, рыба красная малосольная
+            </div>
+          </div><!-- Menu Item -->
+
+        </div><!-- Menu Container -->
+
+      </div>
+
+    </section>
+ <!-- /Menu Section -->
+{% endblock %}

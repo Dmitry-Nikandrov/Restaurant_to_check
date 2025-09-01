@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+{% extends 'restaurant/base.html'  %}
+{% load static %}
+{% block content %}
+<!-- Why Us Section -->
+<section id="why-us" class="why-us section" style="min-height: 100vh; padding: 20px 0; margin-top: 120px;">
+
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+        <h2>ПОЧЕМУ МЫ</h2>
+        <p>О ресторане</p>
+    </div><!-- End Section Title -->
+
+    <div class="container">
+        <div>
+            <h3>ИСТОРИЯ:</h3>
+            <div id="specials" class="p-5 my-5"
+                 style="border-radius: 20px; width: 120vh; opacity: 0.7; background-color: #fac811; color: black">
+                <p class="m-auto" style="font-size: 20px;"> Рюмочная существует с 1996–1997 года (точнее никто не вспомнит, сами понимаете), но поговаривают, свою историю она ведет чуть ли не с 70-х годов (и Венечка это косвенно подтверждает). Там собиралась крайне разношёрстная публика: за одним липким шатким столиком могли отчаянно пьянствовать чинный профессор в твиде, неформал в косухе и футбольное фанатьё. Привлекала их дешёвая выпивка и необременительные закусочки на видавшей виды тарелке, а позволить их себе мог даже последний спившийся интеллигент.
+                </p>
+            </div>
+        </div>
+
+        <div class="row gy-4">
+            <h3>МИССИЯ И ЦЕННОСТИ:</h3>
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="card-item">
+                    <span>01</span>
+                    <h4><span class="stretched-link">Традиции</span></h4>
+                    <p style="font-size: 18px;">
+                        Уважаем кулинарное наследие и сближаем людей разных возрастов, социальных слоев и классов.
+                        В нашей рюмочной отличной себя чувствуют и депутаты, и поэты и футбольные фанаты и просты рабочие. Именно здесь завязывается крепкая дружба на долгие годы.
+                    </p>
+                </div>
+            </div><!-- Card Item -->
+
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="card-item">
+                    <span>02</span>
+                    <h4><span class="stretched-link">Качество</span></h4>
+                    <p style="font-size: 18px;">
+                        Мы тщательно отбираем продукты и алкоголь у проверенных поставщиков, чтобы каждое блюдо и напиток радовали вас своим
+                        вкусом и качеством.
+                    </p>
+                </div>
+            </div><!-- Card Item -->
+
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="card-item">
+                    <span>03</span>
+                    <h4><span class="stretched-link">Уютная атмосфера</span></h4>
+                    <p style="font-size: 18px;">
+                        Создаем теплую и дружелюбную атмосферу для каждого гостя.
+                    </p>
+                </div>
+            </div><!-- Card Item -->
+
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="card-item">
+                    <span>04</span>
+                    <h4><span class="stretched-link">Профессиональный коллектив</span></h4>
+                    <p style="font-size: 18px;">
+                        Команда с большим опытом и любовью к своему делу.
+                        Не боимся экспериментировать и предлагаем современный взгляд на любимые напитки и блюда.</p>
+                </div>
+            </div><!-- Card Item -->
+
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="card-item">
+                    <span>05</span>
+                    <h4><span class="stretched-link">Удобная оплата</span></h4>
+                    <p style="font-size: 18px;">Наличными или безналичным способом, выбор за вами.</p>
+                </div>
+            </div><!-- Card Item -->
+        </div>
+
+        <div class="mt-5 mb-3">
+            <h3>КОМАНДА:</h3>
+            <div class="specials section">
+                <!--Повара-->
+                <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+                    <div class="row">
+                        <h3>Наши команда поваров</h3>
+                        <hr>
+                        <div class="col-lg-3">
+                            <ul class="nav nav-tabs flex-column">
+                                <li class="nav-item">
+                                    <a class="nav-link active show" data-bs-toggle="tab" href="#specials-tab-1-1">Оксана Иванова</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-bs-toggle="tab" href="#specials-tab-2-1">Валентина Грибова</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-bs-toggle="tab" href="#specials-tab-3-1">Сестры Бельские</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-bs-toggle="tab" href="#specials-tab-4-1">Павел Караманов</a>
+                                </li>
+
+                            </ul>
+                        </div>
+                        <div class="col-lg-9 mt-4 mt-lg-0">
+                            <div class="tab-content">
+                                <div class="tab-pane active show" id="specials-tab-1-1">
+                                    <div class="row">
+                                        <div class="col-lg-8 details order-2 order-lg-1">
+                                            <h3>Продавец-официант бара</h3>
+                                            <p>
+                                                Оксана работает в рюмочной много леи и является экспертом своего дела. Чуткое внимание к посетителям делает общение  ней особенно приятным
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-4 text-center order-1 order-lg-2">
+                                            <img src="{% static 'img/man1.jpg' %}" alt="" class="img-fluid">
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="specials-tab-2-1">
+                                    <div class="row">
+                                        <div class="col-lg-8 details order-2 order-lg-1">
+                                            <h3>Помощник продавца-официанта бара</h3>
+
+                                            <p>Валентина работает у нас недавно, но быстро влилась в ритм работы нашего коллектива и успешно справляется со всей работой, помогая нашим продавцам</p>
+                                        </div>
+                                        <div class="col-lg-4 text-center order-1 order-lg-2">
+                                            <img src="{% static 'img/woman1.jpg' %}" class="img-fluid">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="specials-tab-3-1">
+                                    <div class="row">
+                                        <div class="col-lg-8 details order-2 order-lg-1">
+                                            <h3>Повары по приготовлению блюд</h3>
+                                              <p>Сестры Бельские обеспечивают нашу рюмочную вкусной едой на любой вкус от простейших закусок до сложных первый и вторых блюд</p>
+                                        </div>
+                                        <div class="col-lg-4 text-center order-1 order-lg-2">
+                                            <img src="{% static 'img/man2.jpg' %}" alt="" class="img-fluid">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="specials-tab-4-1">
+                                    <div class="row">
+                                        <div class="col-lg-8 details order-2 order-lg-1">
+                                            <h3>Эксперт по спиртным напиткам</h3>
+
+                                            <p>Павел является работником, ответственным за ассортимент, качество и доступность всех спиртных напитков в нашем баре.</p>
+                                        </div>
+                                        <div class="col-lg-4 text-center order-1 order-lg-2">
+                                            <img src="{% static 'img/man4.jpg' %}" alt="" class="img-fluid">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="specials-tab-5-1">
+                                    <div class="row">
+                                        <div class="col-lg-8 details order-2 order-lg-1">
+                                            <h3>Est eveniet ipsam sindera pad rone matrelat sando reda</h3>
+                                            <p class="fst-italic">Omnis blanditiis saepe eos autem qui sunt debitis
+                                                porro quia.</p>
+                                            <p>Exercitationem nostrum omnis. Ut reiciendis repudiandae minus. Omnis
+                                                recusandae ut
+                                                non quam ut quod eius qui. Ipsum quia odit vero atque qui quibusdam
+                                                amet. Occaecati
+                                                sed est sint aut vitae molestiae voluptate vel</p>
+                                        </div>
+                                        <div class="col-lg-4 text-center order-1 order-lg-2">
+                                            <img src="{% static 'img/man3.jpg' %}" alt="" class="img-fluid">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section><!-- /Why Us Section -->
+
+{% endblock %}
