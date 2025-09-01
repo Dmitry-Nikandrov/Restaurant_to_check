@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils import timezone
 from phonenumber_field.modelfields import PhoneNumberField
+
 from users.models import User
 
 NULLABLE = {"null": True, "blank": True}
@@ -14,8 +15,12 @@ class Restaurant(models.Model):
     objects = models.Manager()
 
     name = models.CharField(max_length=255, verbose_name="Название ресторана")
-    address = models.CharField(max_length=255, unique=True, verbose_name="Адрес ресторана")
-    phone_number = PhoneNumberField(default="+7", unique=True, verbose_name="Номер телефона")
+    address = models.CharField(
+        max_length=255, unique=True, verbose_name="Адрес ресторана"
+    )
+    phone_number = PhoneNumberField(
+        default="+7", unique=True, verbose_name="Номер телефона"
+    )
 
     class Meta:
         verbose_name = "Ресторан"
@@ -37,7 +42,11 @@ class Table(models.Model):
     seats = models.IntegerField(verbose_name="Количество мест")
     is_booked = models.BooleanField(verbose_name="Забронирован", default=False)
     restaurant = models.ForeignKey(
-        Restaurant, on_delete=models.CASCADE, related_name="tables", verbose_name="Ресторан", default=1
+        Restaurant,
+        on_delete=models.CASCADE,
+        related_name="tables",
+        verbose_name="Ресторан",
+        default=1,
     )
 
     class Meta:
@@ -54,15 +63,27 @@ class AbstractBooking(models.Model):
     """
 
     table = models.ForeignKey(
-        Table, on_delete=models.SET_NULL, related_name="%(class)ss", verbose_name="Стол", **NULLABLE
+        Table,
+        on_delete=models.SET_NULL,
+        related_name="%(class)ss",
+        verbose_name="Стол",
+        **NULLABLE,
     )
     client = models.ForeignKey(
-        User, on_delete=models.SET_NULL, related_name="%(class)ss", verbose_name="Клиент", **NULLABLE
+        User,
+        on_delete=models.SET_NULL,
+        related_name="%(class)ss",
+        verbose_name="Клиент",
+        **NULLABLE,
     )
     date_reserved = models.DateField(verbose_name="Дата бронирования")
     time_reserved = models.TimeField(verbose_name="Время бронирования")
-    duration = models.PositiveIntegerField(verbose_name="Продолжительность бронирования", default=3)
-    created_at = models.DateTimeField(auto_now_add=True, verbose_name="Дата и время создания")
+    duration = models.PositiveIntegerField(
+        verbose_name="Продолжительность бронирования", default=3
+    )
+    created_at = models.DateTimeField(
+        auto_now_add=True, verbose_name="Дата и время создания"
+    )
     message = models.TextField(verbose_name="Сообщение", **NULLABLE)
 
     class Meta:

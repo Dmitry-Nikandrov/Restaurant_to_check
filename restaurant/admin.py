@@ -1,4 +1,5 @@
 from django.contrib import admin
+
 from restaurant.models import Booking, Restaurant, Table
 
 
@@ -19,6 +20,14 @@ class RestaurantAdmin(admin.ModelAdmin):
 @admin.register(Booking)
 class BookingAdmin(admin.ModelAdmin):
     # form = BookingForm
-    list_display = ("id", "table", "client", "date_reserved", "time_reserved", "duration", "is_active")
+    list_display = (
+        "id",
+        "table",
+        "client",
+        "date_reserved",
+        "time_reserved",
+        "duration",
+        "is_active",
+    )
     list_filter = ("table",)
     search_fields = ("table", "client", "date_reserved")

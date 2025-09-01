@@ -1,9 +1,12 @@
-from config import settings
-from config.settings import EMAIL_HOST_USER
 from django.contrib.auth.forms import PasswordResetForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.tokens import default_token_generator
-from django.contrib.auth.views import LoginView, PasswordResetCompleteView, PasswordResetConfirmView, PasswordResetView
+from django.contrib.auth.views import (
+    LoginView,
+    PasswordResetCompleteView,
+    PasswordResetConfirmView,
+    PasswordResetView,
+)
 from django.core.mail import send_mail
 from django.http import HttpResponseRedirect
 from django.shortcuts import resolve_url
@@ -14,6 +17,9 @@ from django.utils.html import strip_tags
 from django.utils.http import urlsafe_base64_encode
 from django.utils.translation import gettext_lazy as _
 from django.views.generic import CreateView, UpdateView
+
+from config import settings
+from config.settings import EMAIL_HOST_USER
 from users.forms import CustomAuthenticationForm, UserProfileForm, UserRegisterForm
 from users.models import User
 
@@ -106,7 +112,9 @@ class CustomPasswordResetView(PasswordResetView):
         token = default_token_generator.make_token(user)
         uid = urlsafe_base64_encode(force_bytes(user.pk))
 
-        reset_link = self.request.build_absolute_uri(reverse("users:password_reset_confirm", args=[uid, token]))
+        reset_link = self.request.build_absolute_uri(
+            reverse("users:password_reset_confirm", args=[uid, token])
+        )
 
         subject = "Восстановление и сброс пароля"
         message = render_to_string(

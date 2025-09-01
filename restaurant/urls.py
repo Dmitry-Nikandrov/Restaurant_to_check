@@ -1,7 +1,17 @@
 from django.urls import path
+
 from restaurant.apps import RestaurantConfig
-from restaurant.views import (AboutPageView, BookingCreateView, BookingListView, BookingUpdateView, ContactPageView,
-                              GalleryPageView, MainPageView, MenuPageView, TableSelectionView)
+from restaurant.views import (
+    AboutPageView,
+    BookingCreateView,
+    BookingListView,
+    BookingUpdateView,
+    ContactPageView,
+    GalleryPageView,
+    MainPageView,
+    MenuPageView,
+    TableSelectionView,
+)
 
 app_name = RestaurantConfig.name
 

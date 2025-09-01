@@ -14,13 +14,37 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name="Booking",
             fields=[
-                ("id", models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name="ID")),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
                 ("date_reserved", models.DateField(verbose_name="Дата бронирования")),
                 ("time_reserved", models.TimeField(verbose_name="Время бронирования")),
-                ("duration", models.PositiveIntegerField(default=3, verbose_name="Продолжительность бронирования")),
-                ("created_at", models.DateTimeField(auto_now_add=True, verbose_name="Дата и время создания")),
-                ("message", models.TextField(blank=True, null=True, verbose_name="Сообщение")),
-                ("is_active", models.BooleanField(default=True, verbose_name="Активно")),
+                (
+                    "duration",
+                    models.PositiveIntegerField(
+                        default=3, verbose_name="Продолжительность бронирования"
+                    ),
+                ),
+                (
+                    "created_at",
+                    models.DateTimeField(
+                        auto_now_add=True, verbose_name="Дата и время создания"
+                    ),
+                ),
+                (
+                    "message",
+                    models.TextField(blank=True, null=True, verbose_name="Сообщение"),
+                ),
+                (
+                    "is_active",
+                    models.BooleanField(default=True, verbose_name="Активно"),
+                ),
             ],
             options={
                 "verbose_name": "Бронирование",
@@ -30,13 +54,37 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name="BookingHistory",
             fields=[
-                ("id", models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name="ID")),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
                 ("date_reserved", models.DateField(verbose_name="Дата бронирования")),
                 ("time_reserved", models.TimeField(verbose_name="Время бронирования")),
-                ("duration", models.PositiveIntegerField(default=3, verbose_name="Продолжительность бронирования")),
-                ("created_at", models.DateTimeField(auto_now_add=True, verbose_name="Дата и время создания")),
-                ("message", models.TextField(blank=True, null=True, verbose_name="Сообщение")),
-                ("cancelled_at", models.DateTimeField(verbose_name="Время отмены бронирования")),
+                (
+                    "duration",
+                    models.PositiveIntegerField(
+                        default=3, verbose_name="Продолжительность бронирования"
+                    ),
+                ),
+                (
+                    "created_at",
+                    models.DateTimeField(
+                        auto_now_add=True, verbose_name="Дата и время создания"
+                    ),
+                ),
+                (
+                    "message",
+                    models.TextField(blank=True, null=True, verbose_name="Сообщение"),
+                ),
+                (
+                    "cancelled_at",
+                    models.DateTimeField(verbose_name="Время отмены бронирования"),
+                ),
             ],
             options={
                 "verbose_name": "История бронирования",
@@ -46,13 +94,33 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name="Restaurant",
             fields=[
-                ("id", models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name="ID")),
-                ("name", models.CharField(max_length=255, verbose_name="Название ресторана")),
-                ("address", models.CharField(max_length=255, unique=True, verbose_name="Адрес ресторана")),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "name",
+                    models.CharField(max_length=255, verbose_name="Название ресторана"),
+                ),
+                (
+                    "address",
+                    models.CharField(
+                        max_length=255, unique=True, verbose_name="Адрес ресторана"
+                    ),
+                ),
                 (
                     "phone_number",
                     phonenumber_field.modelfields.PhoneNumberField(
-                        default="+7", max_length=128, region=None, unique=True, verbose_name="Номер телефона"
+                        default="+7",
+                        max_length=128,
+                        region=None,
+                        unique=True,
+                        verbose_name="Номер телефона",
                     ),
                 ),
             ],
@@ -65,10 +133,24 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name="Table",
             fields=[
-                ("id", models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name="ID")),
-                ("number", models.IntegerField(unique=True, verbose_name="Номер стола")),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "number",
+                    models.IntegerField(unique=True, verbose_name="Номер стола"),
+                ),
                 ("seats", models.IntegerField(verbose_name="Количество мест")),
-                ("is_booked", models.BooleanField(default=False, verbose_name="Забронирован")),
+                (
+                    "is_booked",
+                    models.BooleanField(default=False, verbose_name="Забронирован"),
+                ),
             ],
             options={
                 "verbose_name": "Стол",

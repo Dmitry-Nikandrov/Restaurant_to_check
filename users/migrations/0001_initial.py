@@ -19,9 +19,22 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name="User",
             fields=[
-                ("id", models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name="ID")),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
                 ("password", models.CharField(max_length=128, verbose_name="password")),
-                ("last_login", models.DateTimeField(blank=True, null=True, verbose_name="last login")),
+                (
+                    "last_login",
+                    models.DateTimeField(
+                        blank=True, null=True, verbose_name="last login"
+                    ),
+                ),
                 (
                     "is_superuser",
                     models.BooleanField(
@@ -46,18 +59,41 @@ class Migration(migrations.Migration):
                         verbose_name="active",
                     ),
                 ),
-                ("date_joined", models.DateTimeField(default=django.utils.timezone.now, verbose_name="date joined")),
-                ("email", models.EmailField(max_length=254, unique=True, verbose_name="Email")),
+                (
+                    "date_joined",
+                    models.DateTimeField(
+                        default=django.utils.timezone.now, verbose_name="date joined"
+                    ),
+                ),
+                (
+                    "email",
+                    models.EmailField(
+                        max_length=254, unique=True, verbose_name="Email"
+                    ),
+                ),
                 ("first_name", models.CharField(max_length=100, verbose_name="Имя")),
                 ("last_name", models.CharField(max_length=100, verbose_name="Фамилия")),
                 (
                     "phone",
                     phonenumber_field.modelfields.PhoneNumberField(
-                        blank=True, default="+7", max_length=128, null=True, region=None, verbose_name="Номер телефона"
+                        blank=True,
+                        default="+7",
+                        max_length=128,
+                        null=True,
+                        region=None,
+                        verbose_name="Номер телефона",
                     ),
                 ),
-                ("country", django_countries.fields.CountryField(default="RU", max_length=2, verbose_name="Страна")),
-                ("about_me", models.TextField(blank=True, null=True, verbose_name="О себе")),
+                (
+                    "country",
+                    django_countries.fields.CountryField(
+                        default="RU", max_length=2, verbose_name="Страна"
+                    ),
+                ),
+                (
+                    "about_me",
+                    models.TextField(blank=True, null=True, verbose_name="О себе"),
+                ),
                 (
                     "avatar",
                     models.ImageField(
@@ -68,7 +104,12 @@ class Migration(migrations.Migration):
                         verbose_name="Фото",
                     ),
                 ),
-                ("token", models.CharField(blank=True, max_length=100, null=True, verbose_name="Token")),
+                (
+                    "token",
+                    models.CharField(
+                        blank=True, max_length=100, null=True, verbose_name="Token"
+                    ),
+                ),
                 ("notes", models.TextField(blank=True, null=True)),
                 (
                     "groups",

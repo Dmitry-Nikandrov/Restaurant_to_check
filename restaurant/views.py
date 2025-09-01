@@ -1,6 +1,5 @@
 from datetime import datetime, timedelta
 
-from config import settings
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.mail import send_mail
@@ -9,6 +8,8 @@ from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse_lazy
 from django.views import View
 from django.views.generic import ListView, TemplateView, UpdateView
+
+from config import settings
 from restaurant.forms import BookingForm, BookingUpdateForm, TableForm
 from restaurant.models import Booking, BookingHistory, Restaurant, Table
 from restaurant.templatetags.custom_filters import formatting_date, formatting_time
@@ -35,7 +36,9 @@ class TableSelectionView(LoginRequiredMixin, View):
         form = TableForm(request.POST)
         if form.is_valid():
             date_reserved = form.cleaned_data["date_reserved"]
-            time_reserved = datetime.strptime(form.cleaned_data["time_reserved"], "%H:%M:%S").time()
+            time_reserved = datetime.strptime(
+                form.cleaned_data["time_reserved"], "%H:%M:%S"
+            ).time()
 
             # Получаем все столы и проверяем их доступность
             tables = Table.objects.all()
@@ -46,7 +49,10 @@ class TableSelectionView(LoginRequiredMixin, View):
                     date_reserved=date_reserved,
                     time_reserved__range=(
                         time_reserved,
-                        (datetime.combine(date_reserved, time_reserved) + timedelta(hours=3)).time(),
+                        (
+                            datetime.combine(date_reserved, time_reserved)
+                            + timedelta(hours=3)
+                        ).time(),
                     ),
                 ).exists()
                 table_statuses.append((table, is_available))
@@ -204,7 +210,9 @@ class BookingListView(LoginRequiredMixin, ListView):
         user = self.request.user
 
         # порядок отображения по дате и времени
-        ordered = Booking.objects.filter(client=user).order_by("date_reserved", "time_reserved")
+        ordered = Booking.objects.filter(client=user).order_by(
+            "date_reserved", "time_reserved"
+        )
         print(ordered)
         return ordered
 
@@ -224,7 +232,9 @@ class BookingListView(LoginRequiredMixin, ListView):
         Дополнительная информация
         """
         context = super().get_context_data(**kwargs)
-        context["booking_history"] = BookingHistory.objects.filter(client=self.request.user).order_by("-cancelled_at")
+        context["booking_history"] = BookingHistory.objects.filter(
+            client=self.request.user
+        ).order_by("-cancelled_at")
         # print(context['booking_history'])
         return context
 

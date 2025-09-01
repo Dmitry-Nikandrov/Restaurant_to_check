@@ -45,10 +45,14 @@ class TableForm(StyleFormMixin, forms.ModelForm):
         super(TableForm, self).__init__(*args, **kwargs)
 
         times = [
-            (datetime.strptime(f"{hour:02d}:{minute:02d}", "%H:%M").time(), f"{hour:02d}:{minute:02d}")
+            (
+                datetime.strptime(f"{hour:02d}:{minute:02d}", "%H:%M").time(),
+                f"{hour:02d}:{minute:02d}",
+            )
             for hour in range(self.open_time, self.close_booking_time + 1)
             for minute in [0, self.time_step]
-            if hour < self.close_booking_time or (hour == self.close_booking_time and minute == 0)
+            if hour < self.close_booking_time
+            or (hour == self.close_booking_time and minute == 0)
         ]
 
         self.fields["time_reserved"].choices = times
@@ -75,7 +79,9 @@ class BookingForm(StyleFormMixin, forms.ModelForm):
         model = Booking
         fields = ["message"]
         widgets = {
-            "message": forms.Textarea(attrs={"placeholder": "Дополнительная информация", "rows": 6}),
+            "message": forms.Textarea(
+                attrs={"placeholder": "Дополнительная информация", "rows": 6}
+            ),
         }
 
 
@@ -99,14 +105,20 @@ class BookingUpdateForm(StyleFormMixin, forms.ModelForm):
             self.initial["time_reserved"] = instance.time_reserved
 
         all_times = [
-            (datetime.strptime(f"{hour:02d}:{minute:02d}", "%H:%M").time(), f"{hour:02d}:{minute:02d}")
+            (
+                datetime.strptime(f"{hour:02d}:{minute:02d}", "%H:%M").time(),
+                f"{hour:02d}:{minute:02d}",
+            )
             for hour in range(self.open_time, self.close_booking_time + 1)
             for minute in [0, self.time_step]
-            if hour < self.close_booking_time or (hour == self.close_booking_time and minute == 0)
+            if hour < self.close_booking_time
+            or (hour == self.close_booking_time and minute == 0)
         ]
 
         # Получаем занятые времена для выбранного стола и даты
-        booked_times = self.get_booked_times(instance.table, self.initial.get("date_reserved", self.next_day))
+        booked_times = self.get_booked_times(
+            instance.table, self.initial.get("date_reserved", self.next_day)
+        )
 
         # Фильтруем список времен, оставляя только свободные
         available_times = [(t, s) for t, s in all_times if (t, s) not in booked_times]
@@ -121,12 +133,19 @@ class BookingUpdateForm(StyleFormMixin, forms.ModelForm):
         """
         from .models import Booking
 
-        booked_slots = Booking.objects.filter(table=table, date_reserved=date).values_list("time_reserved", flat=True)
-        return [(datetime.strptime(str(slot), "%H:%M:%S").time(), str(slot)[:5]) for slot in booked_slots]
+        booked_slots = Booking.objects.filter(
+            table=table, date_reserved=date
+        ).values_list("time_reserved", flat=True)
+        return [
+            (datetime.strptime(str(slot), "%H:%M:%S").time(), str(slot)[:5])
+            for slot in booked_slots
+        ]
 
     class Meta:
         model = Booking
         fields = ["time_reserved", "message"]
         widgets = {
-            "message": forms.Textarea(attrs={"placeholder": "Дополнительная информация", "rows": 6}),
+            "message": forms.Textarea(
+                attrs={"placeholder": "Дополнительная информация", "rows": 6}
+            ),
         }

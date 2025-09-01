@@ -94,13 +94,6 @@ poetry add...
     celery -A config flower --port=5555...
 ```
 
-### PEP8
-
-**Для формирования отчета при помощи flake8-html выполните команду:**
-
-```
-    flake8 ...
-```
 
 ### Развертывание с помощью Docker и Docker Compose
 

@@ -2,6 +2,7 @@ from datetime import datetime, timedelta
 
 from celery import shared_task
 from django.utils import timezone
+
 from restaurant.models import Booking
 
 
@@ -20,7 +21,9 @@ def cancel_expired_bookings():
         # Проверка, что datetime без информации о временной зоне
         if timezone.is_naive(start_datetime):
             # Делаем datetime-aware, устанавливая текущую временную зону
-            start_datetime = timezone.make_aware(start_datetime, timezone.get_current_timezone())
+            start_datetime = timezone.make_aware(
+                start_datetime, timezone.get_current_timezone()
+            )
 
         # Вычисляем время истечения бронирования
         expiration_time = start_datetime + timedelta(hours=booking.duration)
@@ -28,4 +31,6 @@ def cancel_expired_bookings():
         # Если текущее время больше или равно времени истечения, отменяем бронирование
         if now >= expiration_time:
             booking.cancel()
-            print(f"Бронирование для стола {booking.table.number} было отменено, так как истекло время")
+            print(
+                f"Бронирование для стола {booking.table.number} было отменено, так как истекло время"
+            )
