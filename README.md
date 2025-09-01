@@ -58,71 +58,80 @@
 
 4. **Настройка переменных окружения:**
 
-Создайте файл .env в корне проекта и заполните его переменными по шаблону **.env_example:**
+    Создайте файл .env в корне проекта и заполните его переменными по шаблону **.env_example:**
 
 
 5. **Создание базы данных:**
 
-``` python manage.py migrate
+``` 
+    python manage.py migrate
 ```
 
 6. **Создание администратора и первичное наполнение бд:**
 
-```python manage.py csu_and_initial_data
+```
+    python manage.py csu_and_initial_data
 ```
 
 7. **Запуск сервера разработки:**
 
-```python manage.py runserver
+```
+    python manage.py runserver
 ```
 
 8. **Запуск Celery (для отложенных задач Windows):**
 
-```celery -A config worker -l info -P gevent
+```
+    celery -A config worker -l info -P gevent
 ```
 
 9. **Запуск Flower (для мониторинга Celery задач):**
 
-```celery -A config flower --port=5555
+```
+    celery -A config flower --port=5555
 ```
 
 ### PEP8
 
 **Для формирования отчета при помощи flake8-html выполните команду:**
 
-```flake8 
+```
+    flake8 
 ```
 
 ### Развертывание с помощью Docker и Docker Compose
 
-Этот проект можно легко развернуть с помощью Docker и Docker Compose. Для этого необходимо установить Docker и Docker
-Compose на вашей системе.
+    Этот проект можно легко развернуть с помощью Docker и Docker Compose. Для этого необходимо установить Docker и Docker
+    Compose на вашей системе.
 
 1. **Создайте файлы Dockerfile и docker-compose.yaml в корне проекта:**
 
 #### Dockerfile
 
-- описывает шаги для создания образа Docker для приложения Django, используя Poetry для управления зависимостями:
+    - описывает шаги для создания образа Docker для приложения Django, используя Poetry для управления зависимостями:
 
 
 #### Docker Compose
 
-Файл `docker-compose.yaml` описывает сервисы, необходимые для запуска приложения.
+    Файл `docker-compose.yaml` описывает сервисы, необходимые для запуска приложения.
 
 
 2. **Запустите контейнеры Docker Compose:**
 
-   ```docker-compose up --build
+   ```
+    docker-compose up --build
    ```
 
    Этот процесс создаст и запустит все необходимые контейнеры. Для запуска в фоновом режиме используйте:
 
-   ```docker-compose up --build -d
+   ```
+    docker-compose up --build -d
    ```
 
 4. **Примените миграции Django:**
 
- ```docker-compose exec app python manage.py migrate
+ ```
+    docker-compose exec app python manage.py migrate
    ```
 
 
